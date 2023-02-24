@@ -1,4 +1,5 @@
-﻿namespace AppDate
+﻿/// @author Саранчин К.А.
+namespace AppDate
 {
     partial class FormDate
     {

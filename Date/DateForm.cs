@@ -41,16 +41,17 @@ namespace AppDate
             int chet = 0;
             if (Convert.ToInt32(textBoxDay.Text) < 0 || (Convert.ToInt32(textBoxDay.Text) > 31))
             {
-                textBoxDay.BackColor = Color.Red;
+                textBoxDay.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан день";
             }
             else textBoxDay.BackColor = Color.White;
+                
 
 
             if (Convert.ToInt32(textBoxMonth.Text) < 0 || (Convert.ToInt32(textBoxMonth.Text) > 12))
             {
-                textBoxMonth.BackColor = Color.Red;
+                textBoxMonth.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан месяц";
             }
@@ -58,7 +59,7 @@ namespace AppDate
 
             if (Convert.ToInt32(textBoxYear.Text) < 0)
             {
-                textBoxYear.BackColor = Color.Red;
+                textBoxYear.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан год";
             }
@@ -66,12 +67,11 @@ namespace AppDate
 
             if (Convert.ToInt32(textBoxResult1.Text) < 0)
             {
-                textBoxResult1.BackColor = Color.Red;
+                textBoxResult1.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно заданы дни";
             }
             else textBoxResult1.BackColor = Color.White;
-
             return chet;
         }
 
@@ -81,7 +81,7 @@ namespace AppDate
 
             if (Convert.ToInt32(textBoxDay2.Text) < 0 || (Convert.ToInt32(textBoxDay2.Text) > 31))
             {
-                textBoxDay2.BackColor = Color.Red;
+                textBoxDay2.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан день";
             }
@@ -90,7 +90,7 @@ namespace AppDate
 
             if (Convert.ToInt32(textBoxMonth2.Text) < 0 || (Convert.ToInt32(textBoxMonth2.Text) > 12))
             {
-                textBoxMonth2.BackColor = Color.Red;
+                textBoxMonth2.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан месяц";
             }
@@ -98,7 +98,7 @@ namespace AppDate
 
             if (Convert.ToInt32(textBoxYear2.Text) < 0)
             {
-                textBoxYear2.BackColor = Color.Red;
+                textBoxYear2.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан год";
             }
@@ -130,7 +130,7 @@ namespace AppDate
         private void buttonConvertDate_Click(object sender, EventArgs e)
         {
 
-            if (CheckDate1() == 0)
+            
             {
                 SetDate();
                 textBoxResult1.Text = Date1.ConvertDate().ToString();
@@ -160,23 +160,24 @@ namespace AppDate
         /// Сложение даты
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if ((CheckDate1() == 0) || (CheckDate2() == 0))
+            if ((CheckDate1() == 0) & (CheckDate2() == 0))
             {
-                SetDate();
-                Date3.CalcDay(Date1, Date2);
-                textBoxResultAll.Text = " New date = " + "\n" + Date2.GetDay().ToString() + " days " + Date2.GetMonth().ToString() +
-                    " month " + Date2.GetYear().ToString() + " year ";
-                textBoxError.Text = "Информация";
+                    SetDate();
+                    Date3.CalcDay(Date1, Date2);
+                    textBoxResultAll.Text = " New date = " + "\n" + Date3.GetDay().ToString() + " days " + Date3.GetMonth().ToString() +
+                        " month " + Date3.GetYear().ToString() + " year ";
+                    textBoxError.Text = "Информация";
+                
             }
         }
 
         /// Вычитание даты
         private void buttonSub_Click(object sender, EventArgs e)
         {
-            if ((CheckDate1() == 0) || (CheckDate2() == 0))
+            if ((CheckDate1() == 0) & (CheckDate2() == 0))
             {
                 SetDate();
-                Date3.SubDate(Date1, Date2);
+                Date2.SubDate(Date1, Date2);
                 textBoxResultAll.Text = " New sub date = " + "\n" + Date2.GetDay().ToString() + " days " + Date2.GetMonth().ToString() +
                     " month " + Date2.GetYear().ToString() + " year ";
                 textBoxError.Text = "Информация";

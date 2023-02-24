@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿/// @author Саранчин К.А.
+/// Тесты методов
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AppDate;
 using System;
 using System.Collections.Generic;
@@ -81,5 +83,28 @@ namespace AppDate.Tests
             Assert.AreEqual(D1.ToString(), Convert.ToString(19) + " days  " + Convert.ToString(10) + " month  " + Convert.ToString(5) + " year  ");
         }
 
+        [TestMethod()]
+        public void AddMethodTest()    ///Тест со сложением методов
+        {
+            Date D1 = new Date();
+            Date D2 = new Date();
+            Date D3 = new Date();
+            D1.SetDate(15, 5, 200);
+            D2.SetDate(5, 6, 8);
+            D3.CalcDay(D1, D2);
+            Assert.AreEqual(D3.ToString(), Convert.ToString(18) + " days  " + Convert.ToString(11) + " month  " + Convert.ToString(208) + " year  ");
+        }
+
+        [TestMethod()]
+        public void SubMethodTest()    ///Тест с вычитанием методов
+        {
+            Date D1 = new Date();
+            Date D2 = new Date();
+            Date D3 = new Date();
+            D1.SetDate(15, 5, 200);
+            D2.SetDate(5, 6, 8);
+            D3.SubDate(D1, D2);
+            Assert.AreEqual(D3.ToString(), Convert.ToString(11) + " days  " + Convert.ToString(11) + " month  " + Convert.ToString(191) + " year  ");
+        }
     }
 }
