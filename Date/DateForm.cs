@@ -35,35 +35,70 @@ namespace AppDate
         {
 
         }
-
-        private int CheckDate1()
+        /// Передаем ссылки на объекты
+        private int CheckDate(TextBox day, TextBox month, TextBox year)
         {
+
             int chet = 0;
-            if (Convert.ToInt32(textBoxDay.Text) < 0 || (Convert.ToInt32(textBoxDay.Text) > 31))
+            if (Convert.ToInt32(day.Text) < 0 || (Convert.ToInt32(day.Text) > 31))
             {
-                textBoxDay.BackColor = Color.LightPink;
+                day.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан день";
             }
-            else textBoxDay.BackColor = Color.White;
-                
+            else day.BackColor = Color.White;
 
 
-            if (Convert.ToInt32(textBoxMonth.Text) < 0 || (Convert.ToInt32(textBoxMonth.Text) > 12))
+
+            if (Convert.ToInt32(month.Text) < 0 || (Convert.ToInt32(month.Text) > 12))
             {
-                textBoxMonth.BackColor = Color.LightPink;
+                month.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан месяц";
             }
-            else textBoxMonth.BackColor = Color.White;
+            else month.BackColor = Color.White;
 
-            if (Convert.ToInt32(textBoxYear.Text) < 0)
+            if (Convert.ToInt32(year.Text) < 0)
             {
-                textBoxYear.BackColor = Color.LightPink;
+                year.BackColor = Color.LightPink;
                 chet++;
                 textBoxError.Text = "Некорректно задан год";
             }
-            else textBoxYear.BackColor = Color.White;
+            else year.BackColor = Color.White;
+            return chet;
+        }
+
+        private int CheckDate1()
+        {
+
+            int chet = 0;
+            CheckDate(textBoxDay, textBoxMonth, textBoxYear);
+            CheckDate(textBoxDay2, textBoxMonth2, textBoxYear2);
+            //if (Convert.ToInt32(textBoxDay.Text) < 0 || (Convert.ToInt32(textBoxDay.Text) > 31))
+            //{
+            //    textBoxDay.BackColor = Color.LightPink;
+            //    chet++;
+            //    textBoxError.Text = "Некорректно задан день";
+            //}
+            //else textBoxDay.BackColor = Color.White;
+
+
+
+            //if (Convert.ToInt32(textBoxMonth.Text) < 0 || (Convert.ToInt32(textBoxMonth.Text) > 12))
+            //{
+            //    textBoxMonth.BackColor = Color.LightPink;
+            //    chet++;
+            //    textBoxError.Text = "Некорректно задан месяц";
+            //}
+            //else textBoxMonth.BackColor = Color.White;
+
+            //if (Convert.ToInt32(textBoxYear.Text) < 0)
+            //{
+            //    textBoxYear.BackColor = Color.LightPink;
+            //    chet++;
+            //    textBoxError.Text = "Некорректно задан год";
+            //}
+            //else textBoxYear.BackColor = Color.White;
 
             if (Convert.ToInt32(textBoxResult1.Text) < 0)
             {
@@ -72,40 +107,67 @@ namespace AppDate
                 textBoxError.Text = "Некорректно заданы дни";
             }
             else textBoxResult1.BackColor = Color.White;
+
+
+
+            //if (Convert.ToInt32(textBoxDay2.Text) < 0 || (Convert.ToInt32(textBoxDay2.Text) > 31))
+            //{
+            //    textBoxDay2.BackColor = Color.LightPink;
+            //    chet++;
+            //    textBoxError.Text = "Некорректно задан день";
+            //}
+            //else textBoxDay2.BackColor = Color.White;
+
+
+            //if (Convert.ToInt32(textBoxMonth2.Text) < 0 || (Convert.ToInt32(textBoxMonth2.Text) > 12))
+            //{
+            //    textBoxMonth2.BackColor = Color.LightPink;
+            //    chet++;
+            //    textBoxError.Text = "Некорректно задан месяц";
+            //}
+            //else textBoxMonth2.BackColor = Color.White;
+
+            //if (Convert.ToInt32(textBoxYear2.Text) < 0)
+            //{
+            //    textBoxYear2.BackColor = Color.LightPink;
+            //    chet++;
+            //    textBoxError.Text = "Некорректно задан год";
+            //}
+            //else textBoxYear2.BackColor = Color.White;
             return chet;
         }
 
-        private int CheckDate2()
-        {
-            int chet = 0;
+        //private int CheckDate2()
+        //{
+        //    int chet = 0;
 
-            if (Convert.ToInt32(textBoxDay2.Text) < 0 || (Convert.ToInt32(textBoxDay2.Text) > 31))
-            {
-                textBoxDay2.BackColor = Color.LightPink;
-                chet++;
-                textBoxError.Text = "Некорректно задан день";
-            }
-            else textBoxDay2.BackColor = Color.White;
+        //    if (Convert.ToInt32(textBoxDay2.Text) < 0 || (Convert.ToInt32(textBoxDay2.Text) > 31))
+        //    {
+        //        textBoxDay2.BackColor = Color.LightPink;
+        //        chet++;
+        //        textBoxError.Text = "Некорректно задан день";
+        //    }
+        //    else textBoxDay2.BackColor = Color.White;
 
 
-            if (Convert.ToInt32(textBoxMonth2.Text) < 0 || (Convert.ToInt32(textBoxMonth2.Text) > 12))
-            {
-                textBoxMonth2.BackColor = Color.LightPink;
-                chet++;
-                textBoxError.Text = "Некорректно задан месяц";
-            }
-            else textBoxMonth2.BackColor = Color.White;
+        //    if (Convert.ToInt32(textBoxMonth2.Text) < 0 || (Convert.ToInt32(textBoxMonth2.Text) > 12))
+        //    {
+        //        textBoxMonth2.BackColor = Color.LightPink;
+        //        chet++;
+        //        textBoxError.Text = "Некорректно задан месяц";
+        //    }
+        //    else textBoxMonth2.BackColor = Color.White;
 
-            if (Convert.ToInt32(textBoxYear2.Text) < 0)
-            {
-                textBoxYear2.BackColor = Color.LightPink;
-                chet++;
-                textBoxError.Text = "Некорректно задан год";
-            }
-            else textBoxYear2.BackColor = Color.White;
+        //    if (Convert.ToInt32(textBoxYear2.Text) < 0)
+        //    {
+        //        textBoxYear2.BackColor = Color.LightPink;
+        //        chet++;
+        //        textBoxError.Text = "Некорректно задан год";
+        //    }
+        //    else textBoxYear2.BackColor = Color.White;
 
-            return chet;
-        }
+        //    return chet;
+        //}
 
 
         /// Задаем даты
@@ -130,7 +192,7 @@ namespace AppDate
         private void buttonConvertDate_Click(object sender, EventArgs e)
         {
 
-            
+
             {
                 SetDate();
                 textBoxResult1.Text = Date1.ConvertDate().ToString();
@@ -160,21 +222,21 @@ namespace AppDate
         /// Сложение даты
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            if ((CheckDate1() == 0) & (CheckDate2() == 0))
+            if ((CheckDate1() == 0)) //& (CheckDate2() == 0))
             {
-                    SetDate();
-                    Date3.CalcDay(Date1, Date2);
-                    textBoxResultAll.Text = " New date = " + "\n" + Date3.GetDay().ToString() + " days " + Date3.GetMonth().ToString() +
-                        " month " + Date3.GetYear().ToString() + " year ";
-                    textBoxError.Text = "Информация";
-                
+                SetDate();
+                Date3.CalcDay(Date1, Date2);
+                textBoxResultAll.Text = " New date = " + "\n" + Date3.GetDay().ToString() + " days " + Date3.GetMonth().ToString() +
+                    " month " + Date3.GetYear().ToString() + " year ";
+                textBoxError.Text = "Информация";
+
             }
         }
 
         /// Вычитание даты
         private void buttonSub_Click(object sender, EventArgs e)
         {
-            if ((CheckDate1() == 0) & (CheckDate2() == 0))
+            if ((CheckDate1() == 0)) //& (CheckDate2() == 0))
             {
                 SetDate();
                 Date2.SubDate(Date1, Date2);

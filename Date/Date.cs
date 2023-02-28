@@ -223,7 +223,7 @@ namespace AppDate
         /// Вывести дату в стандартном формате 
         override public string ToString()
         {
-            return Convert.ToString(day) + " days  " + Convert.ToString(month) + " month  " + Convert.ToString(year) + " year  ";// +std::to_string(convert_date()) + " all day";
+            return Convert.ToString(day) + " days " + Convert.ToString(month) + " month " + Convert.ToString(year) + " year";// +std::to_string(convert_date()) + " all day";
         }
 
     }
